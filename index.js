@@ -59,6 +59,7 @@ app.get('/hotels', async (req, res) => {
 
     try {
         const hotels = await getHotels(city,radius);
+        console.log(hotels);
         res.json(hotels);
     } catch (error) {
         res.status(500).json({ error: 'Errore nel recupero degli hotel' });
